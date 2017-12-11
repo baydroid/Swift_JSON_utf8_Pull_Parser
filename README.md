@@ -41,18 +41,18 @@ NUMBER means it parsed a JSON number. Call getString() to get the number as a st
 For example, the following code:
 
 let json =
-    "{\r" +
-    "\"people\":\r" +
-    "    [\r" +
-    "    { \"name\": [ \"Jane\", \"Doe\" ], \"year born\": 1990, \"veggi\": true },\r" +
-    "    { \"name\": [ \"John\", \"Doe\" ], \"year born\": 1992, \"veggi\": false }\r" +
-    "    ],\r" +
-    "'zoo':\r" +
-    "    {\r" +
-    "    'name': \"Durel's Zoo\",\r" +
-    "    'year founded': null\r" +
-    "    'animals': [ 'cat', 'dog', 'lion', 'tiger', 'goldfish' ]\r" +
-    "    }\r" +
+    "{\n" +
+    "\"people\":\n" +
+    "    [\n" +
+    "    { \"name\": [ \"Jane\", \"Doe\" ], \"year born\": 1990, \"veggi\": false },\n" +
+    "    { \"name\": [ \"John\", \"Doe\" ], \"year born\": 1992, \"veggi\": true }\n" +
+    "    ],\n" +
+    "'zoo':\n" +
+    "    {\n" +
+    "    'name': \"Durell's Zoo\",\n" +
+    "    'animals': [ 'cat', 'dog', 'lion', 'tiger', 'goldfish' ],\n" +
+    "    'year founded': null\n" +
+    "    }\n" +
     "}"
 print(json);
 print();
