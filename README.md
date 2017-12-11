@@ -47,7 +47,6 @@ let json =
 
 let json =
     "{\n" +
-
     "\"people\":\n" +
     "    [\n" +
     "    { \"name\": [ \"Jane\", \"Doe\" ], \"year born\": 1990, \"veggi\": false },\n" +
