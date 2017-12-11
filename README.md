@@ -1,14 +1,14 @@
 # A fast SAX style JSON parser for Swift.
 
-Many DOM style ways to parse JSON are available for Swift, notably the Swift 4 technique using the Codable protocol. All of them require you to have the complete JSON message before you can start parsing it. They then parse it (almost automatically) to a set of Swift objects and arrays which correspond directly to the objects and arrays in the JSON. The only deviations from this correspondence are that you can skip past unwanted members of JSON objects, and you can map JSON object member names to different Swift object member names.
+Many DOM style ways to parse JSON are available for Swift, notably the Swift 4 technique using the Codable protocol. All of them require you to have the complete JSON message before you can start parsing it. Then they parse it (almost automatically) to a set of Swift objects and arrays corresponding directly to the objects and arrays in the JSON. The only deviations from this correspondence are that you can skip over unwanted members of JSON objects, and you can map JSON object member names to different Swift object member names.
 
 Sometimes that isn't what's wanted. Maybe the JSON's coming from the network in a series of data chunks, and (for performance reasons) you'd like to parse each chunk immediately after it's arrived, instead of having to wait for all the chunks to arrive before starting to parse. Or maybe you'd like to transfer the data from the JSON directly into a database, without slowing things down by always instantiating intermediate Swift objects for every data item transferred.
 
-This parser addresses those issues. It doesn't make any Swift objects for you, it just parses the JSON and tells you whats there. It can parse input in chunks, with no restrictions on whereabouts in the JSON the boundaries between chunks occur. Internally it keeps track of the parse state in between chunks, so when the next chunk comes in it automatically picks up from where it left off without you having to do anything to make this happen.
+This parser addresses those issues. It doesn't make any Swift objects for you, it just parses the JSON and tells you whats there. It can parse input in chunks, with no restrictions on whereabouts in the JSON the boundaries between chunks occur. Internally it keeps track of the parse state in between chunks, so when the next chunk comes in it automatically picks up from where it left off, without you having to do anything to make this happen.
 
 It parses JSON as defined at http://json.org with one addition. Like javascript itself, it permits single quotes (unicode 39) as well as double quotes (unicode 34) to be used as string delimiters.
 
-To use it first make an instance of JsonUtf8PullParser.
+To use it make an instance of JsonUtf8PullParser.
 
 Supply input by first calling startJson() to indicate the beginning of a series of chunks of JSON. Then deliver the first chunk by calling supplyInput(utf8Json : Data, floor : Int, roof : Int). It expects the JSON as UTF-8 in a byte buffer of type Foundation.Data, floor is the index of the first byte of JSON, and roof is the index of the byte after the last byte of JSON. After each chunk's been parsed, deliver the next chunk by calling supplyInput() again. Start a new series of chunks by calling startJson() again.
 
