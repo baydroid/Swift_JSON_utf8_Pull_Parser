@@ -45,19 +45,19 @@ Produces the following output:
 let json =
     "{\n" +
 
-let json =
-    "{\n" +
-    "\"people\":\n" +
-    "    [\n" +
-    "    { \"name\": [ \"Jane\", \"Doe\" ], \"year born\": 1990, \"veggi\": false },\n" +
-    "    { \"name\": [ \"John\", \"Doe\" ], \"year born\": 1992, \"veggi\": true }\n" +
-    "    ],\n" +
-    "'zoo':\n" +
-    "    {\n" +
-    "    'name': \"Durell's Zoo\",\n" +
-    "    'animals': [ 'cat', 'dog', 'lion', 'tiger', 'goldfish' ],\n" +
-    "    'year founded': null\n" +
-    "    }\n" +
+let json = 
+    "{\n" + 
+    "\"people\":\n" + 
+    "    [\n" + 
+    "    { \"name\": [ \"Jane\", \"Doe\" ], \"year born\": 1990, \"veggi\": false },\n" + 
+    "    { \"name\": [ \"John\", \"Doe\" ], \"year born\": 1992, \"veggi\": true }\n" + 
+    "    ],\n" + 
+    "'zoo':\n" + 
+    "    {\n" + 
+    "    'name': \"Durell's Zoo\",\n" + 
+    "    'animals': [ 'cat', 'dog', 'lion', 'tiger', 'goldfish' ],\n" + 
+    "    'year founded': null\n" + 
+    "    }\n" + 
     "}"
 print(json);
 print();
