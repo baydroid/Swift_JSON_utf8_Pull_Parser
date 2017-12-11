@@ -40,6 +40,8 @@ NUMBER means it parsed a JSON number. Call getString() to get the number as a st
 
 For example, the following code:
 
+Produces the following output:
+
 let json =
     "{\n" +
     "\"people\":\n" +
@@ -94,8 +96,6 @@ repeat
         }
     }
 while e != JsonUtf8PullParser.Event.END_JSON
-
-Produces the following output:
 
 {
 "people":
