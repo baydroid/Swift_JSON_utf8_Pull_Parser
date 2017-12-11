@@ -40,8 +40,8 @@ NUMBER means it parsed a JSON number. Call getString() to get the number as a st
 
 For example, the following code:
 
-    // Get the JSON ready in 2 chunks (Data objects d1 and d2)
-    
+    // Get the JSON as UTF-8 in 2 Data objects, d1 and d2.
+
     let json =
         "{\n" +
         "\"people\":\n" +
@@ -69,9 +69,9 @@ For example, the following code:
             { d2.append(c) }
         i += 1
         }
-        
-    // Parse the JSON
-    
+
+    // Parse the JSON.
+
     let p = JsonUtf8PullParser()
     p.startJson()
     p.supplyInput(utf8Json: d1, floor: 0, roof: d1.count)
@@ -85,7 +85,7 @@ For example, the following code:
                 print("\(e.name) \(p.getString().characters.count) \(p.getString())")
                 break
             case JsonUtf8PullParser.Event.NUMBER:
-                print("\(e.name) \(p.getString())")
+                print("\(e.name) \(p.getInt())")
                 break
             case JsonUtf8PullParser.Event.STRING:
                 print("\(e.name) \(p.getString().characters.count) \(p.getString())")
