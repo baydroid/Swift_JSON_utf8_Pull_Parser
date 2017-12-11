@@ -97,73 +97,73 @@ For example, the following code:
 
 Produces the following output:
 
-{
-"people":
-    [
-    { "name": [ "Jane", "Doe" ], "year born": 1990, "veggi": false },
-    { "name": [ "John", "Doe" ], "year born": 1992, "veggi": true }
-    ],
-'zoo':
     {
-    'name': "Durell's Zoo",
-    'animals': [ 'cat', 'dog', 'lion', 'tiger', 'goldfish' ],
-    'year founded': null
+    "people":
+        [
+        { "name": [ "Jane", "Doe" ], "year born": 1990, "veggi": false },
+        { "name": [ "John", "Doe" ], "year born": 1992, "veggi": true }
+        ],
+    'zoo':
+        {
+        'name': "Durell's Zoo",
+        'animals': [ 'cat', 'dog', 'lion', 'tiger', 'goldfish' ],
+        'year founded': null
+        }
     }
-}
 
-START_JSON
-START_OBJECT
-START_NVP 6 people
-START_ARRAY
-START_OBJECT
-START_NVP 4 name
-START_ARRAY
-SUPPLY_MORE_INPUT
-STRING 4 Jane
-STRING 3 Doe
-END_ARRAY
-END_NVP
-START_NVP 9 year born
-NUMBER 1990
-END_NVP
-START_NVP 5 veggi
-FALSE
-END_NVP
-END_OBJECT
-START_OBJECT
-START_NVP 4 name
-START_ARRAY
-STRING 4 John
-STRING 3 Doe
-END_ARRAY
-END_NVP
-START_NVP 9 year born
-NUMBER 1992
-END_NVP
-START_NVP 5 veggi
-TRUE
-END_NVP
-END_OBJECT
-END_ARRAY
-END_NVP
-START_NVP 3 zoo
-START_OBJECT
-START_NVP 4 name
-STRING 12 Durell's Zoo
-END_NVP
-START_NVP 7 animals
-START_ARRAY
-STRING 3 cat
-STRING 3 dog
-STRING 4 lion
-STRING 5 tiger
-STRING 8 goldfish
-END_ARRAY
-END_NVP
-START_NVP 12 year founded
-NULL
-END_NVP
-END_OBJECT
-END_NVP
-END_OBJECT
-END_JSON
+    START_JSON
+    START_OBJECT
+    START_NVP 6 people
+    START_ARRAY
+    START_OBJECT
+    START_NVP 4 name
+    START_ARRAY
+    SUPPLY_MORE_INPUT
+    STRING 4 Jane
+    STRING 3 Doe
+    END_ARRAY
+    END_NVP
+    START_NVP 9 year born
+    NUMBER 1990
+    END_NVP
+    START_NVP 5 veggi
+    FALSE
+    END_NVP
+    END_OBJECT
+    START_OBJECT
+    START_NVP 4 name
+    START_ARRAY
+    STRING 4 John
+    STRING 3 Doe
+    END_ARRAY
+    END_NVP
+    START_NVP 9 year born
+    NUMBER 1992
+    END_NVP
+    START_NVP 5 veggi
+    TRUE
+    END_NVP
+    END_OBJECT
+    END_ARRAY
+    END_NVP
+    START_NVP 3 zoo
+    START_OBJECT
+    START_NVP 4 name
+    STRING 12 Durell's Zoo
+    END_NVP
+    START_NVP 7 animals
+    START_ARRAY
+    STRING 3 cat
+    STRING 3 dog
+    STRING 4 lion
+    STRING 5 tiger
+    STRING 8 goldfish
+    END_ARRAY
+    END_NVP
+    START_NVP 12 year founded
+    NULL
+    END_NVP
+    END_OBJECT
+    END_NVP
+    END_OBJECT
+    END_JSON
