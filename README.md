@@ -44,6 +44,9 @@ Produces the following output:
 
 let json =
     "{\n" +
+
+let json =
+    "{\n" +
     "\"people\":\n" +
     "    [\n" +
     "    { \"name\": [ \"Jane\", \"Doe\" ], \"year born\": 1990, \"veggi\": false },\n" +
