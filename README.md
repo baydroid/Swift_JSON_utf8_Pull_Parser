@@ -91,7 +91,8 @@ For example, the following code:
                 print("\(e.name) \(p.getString().characters.count) \(p.getString())")
                 break
             case JsonUtf8PullParser.Event.SUPPLY_MORE_INPUT:
-                print(e.name); p.supplyInput(utf8Json: d2, floor: 0, roof: d2.count)
+                print(e.name)
+                p.supplyInput(utf8Json: d2, floor: 0, roof: d2.count)
                 break
             default:
                 print(e.name)
