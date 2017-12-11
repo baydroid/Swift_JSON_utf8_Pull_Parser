@@ -1,4 +1,4 @@
-A fast SAX style JSON parser for Swift.
+# A fast SAX style JSON parser for Swift.
 
 Many DOM style ways to parse JSON are available for Swift, notably the Swift 4 technique using the Codable protocol. All of them require you to have the complete JSON message before you can start parsing it. They then parse it (almost automatically) to a set of Swift objects and arrays which correspond directly to the objects and arrays in the JSON. The only deviations from this correspondence are that you can skip past unwanted members of JSON objects, and you can map JSON object member names to different Swift object member names.
 
