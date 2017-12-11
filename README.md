@@ -56,8 +56,8 @@ For example, the following code:
         "    'year founded': null\n" +
         "    }\n" +
         "}"
-    print(json);
-    print();
+    print(json)
+    print()
     var i = 0
     var d1 = Data()
     var d2 = Data()
