@@ -40,65 +40,62 @@ NUMBER means it parsed a JSON number. Call getString() to get the number as a st
 
 For example, the following code:
 
-Produces the following output:
-
-let json =
-    "{\n" +
-
-let json = 
-    "{\n" + 
-    "\"people\":\n" + 
-    "    [\n" + 
-    "    { \"name\": [ \"Jane\", \"Doe\" ], \"year born\": 1990, \"veggi\": false },\n" + 
-    "    { \"name\": [ \"John\", \"Doe\" ], \"year born\": 1992, \"veggi\": true }\n" + 
-    "    ],\n" + 
-    "'zoo':\n" + 
-    "    {\n" + 
-    "    'name': \"Durell's Zoo\",\n" + 
-    "    'animals': [ 'cat', 'dog', 'lion', 'tiger', 'goldfish' ],\n" + 
-    "    'year founded': null\n" + 
-    "    }\n" + 
-    "}"
-print(json);
-print();
-var i = 0
-var d1 = Data()
-var d2 = Data()
-for c in json.utf8
-    {
-    if i < 36
-        { d1.append(c) }
-    else
-        { d2.append(c) }
-    i += 1
-    }
-let p = JsonUtf8PullParser()
-p.startJson()
-p.supplyInput(utf8Json: d1, floor: 0, roof: d1.count)
-var e = JsonUtf8PullParser.Event.NO_EVENT
-repeat
-    {
-    e = p.nextEvent()
-    switch e
+    let json =
+        "{\n" +
+        "\"people\":\n" +
+        "    [\n" +
+        "    { \"name\": [ \"Jane\", \"Doe\" ], \"year born\": 1990, \"veggi\": false },\n" +
+        "    { \"name\": [ \"John\", \"Doe\" ], \"year born\": 1992, \"veggi\": true }\n" +
+        "    ],\n" +
+        "'zoo':\n" +
+        "    {\n" +
+        "    'name': \"Durell's Zoo\",\n" +
+        "    'animals': [ 'cat', 'dog', 'lion', 'tiger', 'goldfish' ],\n" +
+        "    'year founded': null\n" +
+        "    }\n" +
+        "}"
+    print(json);
+    print();
+    var i = 0
+    var d1 = Data()
+    var d2 = Data()
+    for c in json.utf8
         {
-        case JsonUtf8PullParser.Event.START_NVP:
-            print("\(e.name) \(p.getString().characters.count) \(p.getString())")
-            break
-        case JsonUtf8PullParser.Event.NUMBER:
-            print("\(e.name) \(p.getString())")
-            break
-        case JsonUtf8PullParser.Event.STRING:
-            print("\(e.name) \(p.getString().characters.count) \(p.getString())")
-            break
-        case JsonUtf8PullParser.Event.SUPPLY_MORE_INPUT:
-            print(e.name); p.supplyInput(utf8Json: d2, floor: 0, roof: d2.count)
-            break
-        default:
-            print(e.name)
-            break
+        if i < 36
+            { d1.append(c) }
+        else
+            { d2.append(c) }
+        i += 1
         }
-    }
-while e != JsonUtf8PullParser.Event.END_JSON
+    let p = JsonUtf8PullParser()
+    p.startJson()
+    p.supplyInput(utf8Json: d1, floor: 0, roof: d1.count)
+    var e = JsonUtf8PullParser.Event.NO_EVENT
+    repeat
+        {
+        e = p.nextEvent()
+        switch e
+            {
+            case JsonUtf8PullParser.Event.START_NVP:
+                print("\(e.name) \(p.getString().characters.count) \(p.getString())")
+                break
+            case JsonUtf8PullParser.Event.NUMBER:
+                print("\(e.name) \(p.getString())")
+                break
+            case JsonUtf8PullParser.Event.STRING:
+                print("\(e.name) \(p.getString().characters.count) \(p.getString())")
+                break
+            case JsonUtf8PullParser.Event.SUPPLY_MORE_INPUT:
+                print(e.name); p.supplyInput(utf8Json: d2, floor: 0, roof: d2.count)
+                break
+            default:
+                print(e.name)
+                break
+            }
+        }
+    while e != JsonUtf8PullParser.Event.END_JSON
+
+Produces the following output:
 
 {
 "people":
