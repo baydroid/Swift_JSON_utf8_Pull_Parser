@@ -58,18 +58,18 @@ fileprivate let CH_A              : UInt8 = 65
 
 public class JsonUtf8PullParser
     {
-    fileprivate var cc : UInt8 = 0
-    fileprivate var jsonTextIndex = 0
-    fileprivate var jsonTextIndexRoof = 0
-    fileprivate var jsonText = UNSET_DATA
-    fileprivate var jStateIndex = 0
-    fileprivate var jStates = [JsonState.ROOT]
-    fileprivate var dState = DataState.NOT_IN_DATA
-    fileprivate var quoteCh = CH_QUOTES
-    fileprivate var buffer = Data()
-    fileprivate var hex = 0
-    fileprivate var starting = true
-    fileprivate var done = false
+    fileprivate var cc : UInt8 = 0                 // The byte of UTF-8 JSON currently being parsed
+    fileprivate var jsonTextIndex = 0              // Index in jsonText of the next byte of UTF-8 JSON to be parsed
+    fileprivate var jsonTextIndexRoof = 0          // Index in jsonText of the byte after the last byte of JSON in jsonText
+    fileprivate var jsonText = UNSET_DATA          // JSON being parsed in UTF-8
+    fileprivate var jStateIndex = 0                // Index of top of stack in jStates
+    fileprivate var jStates = [JsonState.ROOT]     // JSON structure (array, object, object member name and value) parse state stack.
+    fileprivate var dState = DataState.NOT_IN_DATA // Data primative (string, number, boolean, null) parse state.
+    fileprivate var quoteCh = CH_QUOTES            // Terminating quote of the string being parsed
+    fileprivate var buffer = Data()                // UTF-8 buffer for the data primative (string, number, boolean, null) being parsed
+    fileprivate var hex = 0                        // Int buffer for the unicode string escape \u
+    fileprivate var starting = true                // Flag indicating the start of a new JSON message
+    fileprivate var done = false                   // Flag indicating the parser has reached the end of a JSON message
 
     public enum Event : Int
         {
