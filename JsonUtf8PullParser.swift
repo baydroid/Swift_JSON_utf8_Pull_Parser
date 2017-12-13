@@ -90,7 +90,7 @@ public class JsonUtf8PullParser
         case JSON_FORMAT_ERROR
         case NO_EVENT
 
-        var name : String
+        public var name : String
             {
             get
                 {
